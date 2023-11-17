@@ -1,8 +1,9 @@
 from django.urls import path
 
-from smart.views import MyView
+from smart.views import RegView
 
 urlpatterns = [
-    path("", MyView.as_view()),
+    path("reg/", RegView.as_view()),
+    # path("", MainView.as_view()),
 
 ]
