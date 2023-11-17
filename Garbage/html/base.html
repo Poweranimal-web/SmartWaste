@@ -24,12 +24,16 @@
 					<li> <a href="#">Магазин</a></li>
 					<li> <a href="#">Як це працюе?</a></li>
 					<li> <a href="{% url 'reg' %}">Особистий кабінет</a></li>
-					<li> <a href="#">Вийти</a></li>
+					{% if request.session.auth is True %}
+						<li> <a href="#">Вийти</a></li>
+					{% endif %}
 				</ul>
-				<div class="coins-main-wrapper">
-					<img src="img/coin.png" alt="">
-					<span>0.0</span>
-				</div>
+				{% if request.session.auth is True %}
+					<div class="coins-main-wrapper">
+						<img src="{% static 'img\coin.png' %}" alt="">
+						<span>0.0</span>
+					</div>
+				{% endif %}
 			</nav>
 		</div>
 	</header>

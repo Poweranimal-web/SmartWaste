@@ -17,13 +17,13 @@ class RegView(View):
             else:
                 User.objects.create(nickname=data["nickname"], email=data["email"], password=data["password"])
                 request.session["Email"] = data["email"]
-                request.session["Auth"] = True
+                request.session["auth"] = True
                 return JsonResponse({"status": "created"})
         if data["status"] == "validate":
             exist_email = User.objects.filter(email=data["email"], password=data["password"]).exists()
             if exist_email:
                 request.session["Email"] = data["email"]
-                request.session["Auth"] = True
+                request.session["auth"] = True
                 return JsonResponse({"status": "checked"})
             else:
                 return JsonResponse({"status": "not exist"})

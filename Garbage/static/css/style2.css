@@ -11,10 +11,12 @@ font-family: Roboto;
 }
 .logoWrap img{
 	max-width: 50px;
+
 }
 .main-menu-wrap{
  display: flex;
  justify-content: space-between;
+ align-items: center;
 }
 .main-menu{
 display: flex;
@@ -109,7 +111,10 @@ line-height: normal;
 .social-media-buttons-wrap img{
 
 }
-
+.coins-main-wrapper{
+	text-align: center;
+	cursor: pointer;
+}
 
 
 
