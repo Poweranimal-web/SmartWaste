@@ -16,7 +16,9 @@ const loginBtn = document.querySelector("label.login");
 const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
 const regBtn = document.getElementById("reg");
+const logBtn = document.getElementById("log");
 regBtn.addEventListener("click", submit_reg);
+logBtn.addEventListener("click", submit_auth);
 signupBtn.onclick = () => {
   loginForm.style.marginLeft = "-50%";
   loginText.style.marginLeft = "-50%";
@@ -29,7 +31,8 @@ signupLink.onclick = () => {
   signupBtn.click();
   return false;
 };
-async function submit_reg(){
+async function submit_reg(event){
+  event.preventDefault();
   let response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -44,16 +47,36 @@ async function submit_reg(){
   });
   let res = await response.json();
   if (res["status"] == "account exist"){
-      
+    let error = document.getElementById("error-reg");
+    error.textContent = "Аккаунт с таким email вже існує";
+    error.style.display = "flex";
   }
-  else if (res["status"] == "account exist"){
+  else if (res["status"] == "created"){
+      document.location.href='http://127.0.0.1:8000/';
+  }
+  
+} 
 
-    
-  }
-  else if (res["status"] == "checked"){
-    
+async function submit_auth(event){
+  event.preventDefault();
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify({
+      "status": "validate",
+      "email": document.getElementById("email-login").value,
+      "password":  document.getElementById("password-login").value,
+    })
+  });
+  let res = await response.json();
+  if (res["status"] == "checked"){
+    document.location.href='http://127.0.0.1:8000/';
   }
   else if (res["status"] == "not exist"){
-    
-  }
-} 
+    let error = document.getElementById("error-login");
+    error.textContent = "Такого аккаунту не існує";
+    error.style.display = "flex";
+  } 
+}

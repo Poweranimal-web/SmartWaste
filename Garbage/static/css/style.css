@@ -179,9 +179,13 @@ form .btn input[type="submit"] {
 #error-login{
   display: none;
   justify-content: center;
+  margin-top: 10px;
+  color: red;
 }
     
 #error-reg{
   display: none;
   justify-content: center;
+  margin-top: 10px;
+  color: red;
 }
