@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css\style2.css' %}">
+	<link rel="stylesheet" href="{% static 'css\normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'css\howitworks.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome Artem</h1>
+	<div class="main-first-wrapper-extra">
+	<header>
+		<div class="container">
+			<nav class="main-menu-wrap">
+				<div class="logoWrap">
+					<img src="{% static 'img\logo.png' %}" alt="logo">
+				</div>
+				<ul class='main-menu'>
+					<li> <a href="#">Магазин</a></li>
+					<li> <a href="#">Як це працюе?</a></li>
+					<li> <a href="{% url 'reg' %}">Особистий кабінет</a></li>
+					<li> <a href="#">Вийти</a></li>
+				</ul>
+				<div class="coins-main-wrapper">
+					<img src="img/coin.png" alt="">
+					<span>0.0</span>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<section id='section1'>
+		<div class="container">
+			<div class="main-center-block-wrapper">
+				<h1>Переробити сміття</h1>
+				<p>Переробляй сміття та отримуй бонуси</p>
+				<div class="button-main-wrapper">
+					<button>Знайти смітник</button>
+					<div class="social-media-buttons-wrap">
+						<img src="{% static 'img\facebook.png' %}"  alt="">
+						<img src="{% static 'img\instagram.png' %}" alt="" class='inst'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+ <div class="heading-container">
+        <h2>Як це працює</h2>
+    </div>
+    <div class="body-container">
+        <div class="item">
+            <img src="{% static 'img\camera 1.png' %}" alt="Описание изображения 1">
+            <p><span>Heading 1</span><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet laborum unde exercitationem. Quas in harum optio, cumque doloribus veniam! Rerum ea impedit laudantium excepturi veniam rem sequi totam tempore maxime!</p>
+        </div>
+        <div class="item">
+            <img src="{% static 'img\qr-code 1.png' %}"  alt="Описание изображения 2">
+            <p><span>Heading 2</span><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet laborum unde exercitationem. Quas in harum optio,
+            cumque doloribus veniam! Rerum ea impedit laudantium excepturi veniam rem sequi totam tempore maxime!</p>
+        </div>
+        <div class="item">
+            <img src= "{% static 'img\_3fcb8231-ca67-4d5c-bc8a-4d056f2b1c52 2.png' %}" alt="Описание изображения 2">
+            <p><span>Heading 3</span><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet laborum unde exercitationem. Quas in harum optio,
+            cumque doloribus veniam! Rerum ea impedit laudantium excepturi veniam rem sequi totam tempore maxime!</p>
+        </div>
+        <div class="item">
+            <img src="{% static 'img\exchanging 1.png' %}" alt="Описание изображения 2">
+            <p><span>Heading 4</span><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet laborum unde exercitationem. Quas in harum optio,
+            cumque doloribus veniam! Rerum ea impedit laudantium excepturi veniam rem sequi totam tempore maxime!</p>
+        </div>
+    </div>
 </body>
 </html>
+

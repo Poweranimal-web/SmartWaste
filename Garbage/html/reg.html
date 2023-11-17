@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>    
+    <div class="wrapper">
+        <div class="title-text">
+          <div class="title login">Форма входу</div>
+          <div class="title signup">Реєстраційна форма</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Увійти</label>
+            <label for="signup" class="slide signup">Зареєструватися</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="#" class="login">
+              <div class="field">
+                <input type="email" id="email-login" placeholder="Електронна пошта" required>
+              </div>
+              <div class="field">
+                <input type="password" id="password-login" placeholder="Пароль" required minlength="4">
+              </div>
+
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                  <input type="submit" id="log" value="Увійти">
+              </div>
+              <span id="error-login">Jksksdsdksdkskh</span>
+              <div class="signup-link">Не зареєстровані? <a href="#">Зареєструватися зараз</a></div>
+            </form>
+            <form action="#" class="signup">
+              <div class="field">
+                <input type="text" id="nickname" placeholder="Ім'я користувача" required minlength="5"> 
+              </div>
+              <div class="field">
+                <input type="email" id="email" placeholder="Електронна пошта" required>
+              </div>
+              <div class="field">
+                <input type="password" id="password" name="password" placeholder="Пароль" required minlength="4" oninput="checkPasswordMatch()">
+              </div>
+              <div class="field">
+                <input type="password"  id="confirmPassword" name="confirmPassword" placeholder="Півторити пароль" required minlength="4" pattern="^.{4,}$" 
+                oninput="checkPasswordMatch()">
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" id="reg" value="Зареєструватися">
+              </div>
+              <span id="error-reg">Jksksdsdksdkskh</span>
+            </form>
+          </div>
+        </div>
+      </div>
+        <script  src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
